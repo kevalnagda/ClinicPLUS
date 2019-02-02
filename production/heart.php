@@ -155,7 +155,7 @@ $conn->query($sql);
                   </li> -->
                   <li><a><i class="fa fa-table"></i> Test Details <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="index.php">Diabetes</a></li>
+                      <li><a href="diabetes.php">Diabetes</a></li>
                       <li><a href="breastcancer.php">Breast Cancer</a></li>
                       <li><a href="fertility.php">Fertility</a></li>
                       <li><a href="cervic.php">Cervical Cancer</a></li>
