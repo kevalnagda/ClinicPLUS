@@ -1,39 +1,82 @@
 <?php 
+
 $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "clinicplus";
+$flag = 0;
 $conn = new mysqli($servername, $username, $password, $database);
+
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-if(isset($_POST["SBP"])) {
-$SBP=$_POST["SBP"];  
-$LDL=$_POST["LDL"];
-$AL=$_POST["AL"];
-$gender=$_POST["gender"];
-$sql="SELECT PatientID FROM diabetes ORDER BY PatientID DESC LIMIT 1";
+if(isset($_POST["radius_m"])) {
+$sql="SELECT ID FROM diagnostic_breast_cancer ORDER BY ID DESC LIMIT 1";
 if($res=$conn->query($sql)) {
     $resarr=$res->fetch_assoc();
-    $id=$resarr["PatientID"]+1;
+    $id=$resarr["ID"]+1;
 }
 else {
     $id=1;
 }
-$sql="insert into diabetes values(1,$id,$SBP,'$LDL','$AL','$gender','0')";
 
-$conn->query($sql);
+    $radius_m=$_POST["radius_m"];  
+    $texture_m=$_POST["texture_m"];
+    $peri_m=$_POST["peri_m"];
+    $area_m=$_POST["area_m"];
+    $smooth_m=$_POST["smooth_m"];
+    $compac_m=$_POST["compac_m"];
+    $concav_m=$_POST["concav_m"];
+    $concavp_m=$_POST["concavp_m"];
+    $symm_m=$_POST["symm_m"];
+    $fract_m=$_POST["fract_m"];
+    $radius_se=$_POST["radius_se"];
+    $texture_se=$_POST["texture_se"];
+    $peri_se=$_POST["peri_se"];
+    $area_se=$_POST["area_se"];
+    $smooth_se=$_POST["smooth_se"];
+    $compac_se=$_POST["compac_se"];
+    $concav_se=$_POST["concav_se"];
+    $concavp_se=$_POST["concavp_se"];
+    $symm_se=$_POST["symm_se"];
+    $fract_se=$_POST["fract_se"];
+    $radius_w=$_POST["radius_w"];
+    $texture_w=$_POST["texture_w"];
+    $peri_w=$_POST["peri_w"];
+    $area_w=$_POST["area_w"];
+    $smooth_w=$_POST["smooth_w"];
+    $compac_w=$_POST["compac_w"];
+    $concav_w=$_POST["concav_w"];
+    $concavp_w=$_POST["concavp_w"];
+    $symm_w=$_POST["symm_w"];
+    $fract_w=$_POST["fract_w"];
+    // $tumor=$_POST["tumor"];
+    // $lymph=$_POST["lymph"];
+
 $url = 'http://localhost:5000/';
 $ch = curl_init($url);
-curl_setopt($ch, CURLOPT_POSTFIELDS, "");
+ 
+// $myObj->PatientEncounterID = 1;
+// $myObj->PatientID = 30;
+// $myObj->SystolicBPNBR = $SBP;
+// $myObj->LDLNBR = $LDL;
+// $myObj->A1CNBR = $AL;
+// $myObj->GenderFLG = $gender;
+
+// $myJSON = json_encode($myObj);
+
+curl_setopt($ch, CURLOPT_POSTFIELDS, '');
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $result = curl_exec($ch);
 curl_close($ch);
-}
 
+$sql="insert into diagnostic_breast_cancer values($id,'M',$radius_m,$texture_m,$peri_m,$area_m,$smooth_m,$compac_m,$concav_m,$concavp_m,$symm_m,$fract_m,$radius_se,$texture_se,$peri_se,$area_se,$smooth_se,$compac_se,$concav_se,$concavp_se,$symm_se,$fract_se,$radius_w,$texture_w,$peri_w,$area_w,$smooth_w,$compac_w,$concav_w,$concavp_w,$symm_w,$fract_w)";
+
+$conn->query($sql);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -105,7 +148,6 @@ curl_close($ch);
                       <li><a href="test.php">Add Test</a></li>
                     </ul>
                   </li>
-
                   <!-- <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="form.html">General Form</a></li>
@@ -142,9 +184,8 @@ curl_close($ch);
                   </li>
                   <li><a><i class="fa fa-bar-chart-o"></i> Statistics <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="pricing-info.php">Dashboard Pricing</a></li>
-                      <li><a href="diabetes-info.php">Dashboard Diabetes</a></li>
-                      <li><a href="custom-info.php">Custom Dashboard</a></li>
+                      <li><a href="chartjs.html">User Statistics</a></li>
+                      <li><a href="chartjs2.html">Clinic Statistics</a></li>
                     </ul>
                   </li>                  
                 </ul>
@@ -322,56 +363,56 @@ curl_close($ch);
                       <thead>
                         <tr>
                           <th>Patient ID</th>
-                          <th>Systolic Blood Pressure</th>
-                          <th>LDL level</th>
-                          <th>A1c level</th>
-                          <th>Gender</th>
-                          <th>Prediction</th>
+                          <th>Radius Mean</th>
+                          <th>Texture Mean</th>
+                          <th>Perimeter Mean</th>
+                          <th>Area Mean</th>
+                          <th>Diagnosis</th>
                         </tr>
                       </thead>
                       <tbody>
-                      	<?php 
-                  		$servername = "localhost";
-						$username = "root";
-						$password = "";
-						$database = "clinicplus";
-						$conn = new mysqli($servername, $username, $password, $database);
+                        <?php 
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "";
+                        $database = "clinicplus";
+                        $conn = new mysqli($servername, $username, $password, $database);
 
-						if ($conn->connect_error) {
-						    die("Connection failed: " . $conn->connect_error);
-						} 
+                        if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
+                        } 
 
-						$sql="SELECT * FROM diabetes";
+                        $sql="SELECT * FROM diagnostic_breast_cancer";
 
-						$result = $conn->query($sql);
+                        $result = $conn->query($sql);
 
-						while($row = $result->fetch_assoc()){
-							$id  = $row['PatientID'];
-							$sys = $row['SystolicBPNBR'];
-							$ldl = $row['LDLNBR'];
-							$a1c = $row['A1CNBR'];
-							$gen = $row['GenderFLG'];
-							$pred = $row['Prediction'];
-							$res = "";
+                        while($row = $result->fetch_assoc()){
+                            $id  = $row['ID'];
+                            $diag = $row['Diagnosis'];
+                            $rad = $row['Radius_M'];
+                            $text = $row['Texture_M'];
+                            $peri = $row['Perimeter_M'];
+                            $area = $row['Area_M'];
+                            $res = "";
 
-							if($pred) {
-								$res = "Yes";
-							}
-							else {
-								$res = "No";
-							}
+                            if($diag) {
+                                $res = "Yes";
+                            }
+                            else {
+                                $res = "No";
+                            }
 
-							echo '<tr>
-							<td row="scope">'.$id.'</td>
-							<td>'.$sys.'</td>
-							<td>'.$ldl.'</td>
-							<td>'.$a1c.'</td>
-							<td>'.$gen.'</td>
-							<td>'.$res.'</td>
-							</tr>';
-				        }
+                            echo '<tr>
+                            <td row="scope">'.$id.'</td>
+                            <td>'.$rad.'</td>
+                            <td>'.$text.'</td>
+                            <td>'.$peri.'</td>
+                            <td>'.$area.'</td>
+                            <td>'.$res.'</td>
+                            </tr>';
+                        }
 
-                      	?>
+                        ?>
                       </tbody>
                     </table>
 

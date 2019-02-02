@@ -1,20 +1,19 @@
 <?php 
+
 $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "clinicplus";
+$flag = 0;
 $conn = new mysqli($servername, $username, $password, $database);
+
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-if(isset($_POST["SBP"])) {
-$SBP=$_POST["SBP"];  
-$LDL=$_POST["LDL"];
-$AL=$_POST["AL"];
-$gender=$_POST["gender"];
-$sql="SELECT PatientID FROM diabetes ORDER BY PatientID DESC LIMIT 1";
+if(isset($_POST["radius_m"])) {
+$sql="SELECT PatientID FROM fertility ORDER BY PatientID DESC LIMIT 1";
 if($res=$conn->query($sql)) {
     $resarr=$res->fetch_assoc();
     $id=$resarr["PatientID"]+1;
@@ -22,18 +21,39 @@ if($res=$conn->query($sql)) {
 else {
     $id=1;
 }
-$sql="insert into diabetes values(1,$id,$SBP,'$LDL','$AL','$gender','0')";
 
-$conn->query($sql);
+    $season=$_POST["season"];  
+    $age=$_POST["age"];
+    $child=$_POST["child"];
+    $trauma=$_POST["trauma"];
+    $sugrical=$_POST["sugrical"];
+    $fever=$_POST["fever"];
+    $alcohol=$_POST["alcohol"];
+    $smoking=$_POST["smoking"];
+    $sitting=$_POST["sitting"];
+
 $url = 'http://localhost:5000/';
 $ch = curl_init($url);
-curl_setopt($ch, CURLOPT_POSTFIELDS, "");
+ 
+// $myObj->PatientEncounterID = 1;
+// $myObj->PatientID = 30;
+// $myObj->SystolicBPNBR = $SBP;
+// $myObj->LDLNBR = $LDL;
+// $myObj->A1CNBR = $AL;
+// $myObj->GenderFLG = $gender;
+
+// $myJSON = json_encode($myObj);
+
+curl_setopt($ch, CURLOPT_POSTFIELDS, '');
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $result = curl_exec($ch);
 curl_close($ch);
-}
 
+$sql="insert into fertility values($id,$season,$age,$child,$trauma,$sugrical,$fever,$alcohol,$smoking,$sitting,'N')";
+
+$conn->query($sql);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -322,56 +342,99 @@ curl_close($ch);
                       <thead>
                         <tr>
                           <th>Patient ID</th>
-                          <th>Systolic Blood Pressure</th>
-                          <th>LDL level</th>
-                          <th>A1c level</th>
-                          <th>Gender</th>
-                          <th>Prediction</th>
+                          <th>Season</th>
+                          <th>Age</th>
+                          <th>Childhood Disease</th>
+                          <th>Trauma</th>
+                          <th>Surgical Intervention</th>
+                          <th>High Fevers</th>
+                          <th>Alcohol Consumption</th>
+                          <th>Smoking Habit</th>
+                          <th>Sitting Hours</th>
+                          <th>Diagnosis</th>
                         </tr>
                       </thead>
                       <tbody>
-                      	<?php 
-                  		$servername = "localhost";
-						$username = "root";
-						$password = "";
-						$database = "clinicplus";
-						$conn = new mysqli($servername, $username, $password, $database);
+                        <?php 
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "";
+                        $database = "clinicplus";
+                        $conn = new mysqli($servername, $username, $password, $database);
 
-						if ($conn->connect_error) {
-						    die("Connection failed: " . $conn->connect_error);
-						} 
+                        if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
+                        } 
 
-						$sql="SELECT * FROM diabetes";
+                        $sql="SELECT * FROM fertility";
 
-						$result = $conn->query($sql);
+                        $result = $conn->query($sql);
 
-						while($row = $result->fetch_assoc()){
-							$id  = $row['PatientID'];
-							$sys = $row['SystolicBPNBR'];
-							$ldl = $row['LDLNBR'];
-							$a1c = $row['A1CNBR'];
-							$gen = $row['GenderFLG'];
-							$pred = $row['Prediction'];
-							$res = "";
+                        while($row = $result->fetch_assoc()){
+                            $id  = $row['PatientID'];
+                            $diag = $row['Diagnosis'];
+                            $season = $row['Season'];
+                            $age = $row['Age'];
+                            $child = $row['ChildishDiseases'];
+                            $trauma = $row['Trauma'];
+                            $surg = $row['SurgicalIntervention'];
+                            $fever = $row['HighFevers'];
+                            $alcohol = $row['AlcoholConsumption'];
+                            $smoking = $row['SmokingHabit'];
+                            $sitting = $row['SittingHours'];
+                            $dres = "";$sres = "";
 
-							if($pred) {
-								$res = "Yes";
-							}
-							else {
-								$res = "No";
-							}
+                            if($diag) {
+                                $dres = "Yes";
+                            }
+                            else {
+                                $dres = "No";
+                            }
 
-							echo '<tr>
-							<td row="scope">'.$id.'</td>
-							<td>'.$sys.'</td>
-							<td>'.$ldl.'</td>
-							<td>'.$a1c.'</td>
-							<td>'.$gen.'</td>
-							<td>'.$res.'</td>
-							</tr>';
-				        }
+                            if($smoking) {
+                                $sres = "Yes";
+                            }
+                            else {
+                                $sres = "No";
+                            }
 
-                      	?>
+                            if($trauma) {
+                                $tres = "Yes";
+                            }
+                            else {
+                                $tres = "No";
+                            }
+
+                            if($surg) {
+                                $sures = "Yes";
+                            }
+                            else {
+                                $sures = "No";
+                            }
+
+                            if($fever) {
+                                $fres = "Yes";
+                            }
+                            else {
+                                $fres = "No";
+                            }
+
+                            echo '<tr>
+                            <td row="scope">'.$id.'</td>
+                            <td>'.$season.'</td>
+                            <td>'.$age.'</td>
+                            <td>'.$child.'</td>
+                            <td>'.$tres.'</td>
+                            <td>'.$sures.'</td>
+                            <td>'.$fres.'</td>
+                            <td>'.$alcohol.'</td>
+                            <td>'.$sres.'</td>
+                            <td>'.$sitting.'</td>
+                            <td>'.$dres.'</td>
+                            </tr>';
+                        }
+
+                        ?>
                       </tbody>
                     </table>
 

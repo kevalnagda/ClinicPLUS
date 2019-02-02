@@ -1,20 +1,19 @@
 <?php 
+
 $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "clinicplus";
+$flag = 0;
 $conn = new mysqli($servername, $username, $password, $database);
+
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-if(isset($_POST["SBP"])) {
-$SBP=$_POST["SBP"];  
-$LDL=$_POST["LDL"];
-$AL=$_POST["AL"];
-$gender=$_POST["gender"];
-$sql="SELECT PatientID FROM diabetes ORDER BY PatientID DESC LIMIT 1";
+if(isset($_POST['age'])) {
+$sql="SELECT PatientID FROM heart ORDER BY PatientID DESC LIMIT 1";
 if($res=$conn->query($sql)) {
     $resarr=$res->fetch_assoc();
     $id=$resarr["PatientID"]+1;
@@ -22,18 +21,43 @@ if($res=$conn->query($sql)) {
 else {
     $id=1;
 }
-$sql="insert into diabetes values(1,$id,$SBP,'$LDL','$AL','$gender','0')";
 
-$conn->query($sql);
+    $age=$_POST["age"];  
+    $sex=$_POST["sex"];
+    $chest=$_POST["chest"];
+    $chol=$_POST["chol"];
+    $bp=$_POST["bp"];
+    $sugar=$_POST["sugar"];
+    $EC=$_POST["EC"];
+    $maxhr=$_POST["maxhr"];
+    $angina=$_POST["angina"];
+    $opeak=$_POST["opeak"];
+    $peaks=$_POST["peaks"];
+    $majorv=$_POST["majorv"];
+    $thal=$_POST["thal"];
+
 $url = 'http://localhost:5000/';
 $ch = curl_init($url);
-curl_setopt($ch, CURLOPT_POSTFIELDS, "");
+ 
+// $myObj->PatientEncounterID = 1;
+// $myObj->PatientID = 30;
+// $myObj->SystolicBPNBR = $SBP;
+// $myObj->LDLNBR = $LDL;
+// $myObj->A1CNBR = $AL;
+// $myObj->GenderFLG = $gender;
+
+// $myJSON = json_encode($myObj);
+
+curl_setopt($ch, CURLOPT_POSTFIELDS, '');
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $result = curl_exec($ch);
 curl_close($ch);
-}
 
+$sql="insert into heart values($id,$age,$sex,$chest,$bp,$chol,$sugar,$EC,$maxhr,$angina,$opeak,$peaks,$majorv,$thal,1)";
+
+$conn->query($sql);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -322,56 +346,85 @@ curl_close($ch);
                       <thead>
                         <tr>
                           <th>Patient ID</th>
-                          <th>Systolic Blood Pressure</th>
-                          <th>LDL level</th>
-                          <th>A1c level</th>
-                          <th>Gender</th>
-                          <th>Prediction</th>
+                          <th>Age</th>
+                          <th>Sex</th>
+                          <th>Chest</th>
+                          <th>Blood Pressure</th>
+                          <th>Cholesterol</th>
+                          <th>Blood sugar</th>
+                          <th>EC Results</th>
+                          <th>Max Heart rate</th>
+                          <th>Major Vessels</th>
+                          <th>Diagnosis</th>
                         </tr>
                       </thead>
                       <tbody>
-                      	<?php 
-                  		$servername = "localhost";
-						$username = "root";
-						$password = "";
-						$database = "clinicplus";
-						$conn = new mysqli($servername, $username, $password, $database);
+                        <?php 
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "";
+                        $database = "clinicplus";
+                        $conn = new mysqli($servername, $username, $password, $database);
 
-						if ($conn->connect_error) {
-						    die("Connection failed: " . $conn->connect_error);
-						} 
+                        if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
+                        } 
 
-						$sql="SELECT * FROM diabetes";
+                        $sql="SELECT * FROM heart";
 
-						$result = $conn->query($sql);
+                        $result = $conn->query($sql);
 
-						while($row = $result->fetch_assoc()){
-							$id  = $row['PatientID'];
-							$sys = $row['SystolicBPNBR'];
-							$ldl = $row['LDLNBR'];
-							$a1c = $row['A1CNBR'];
-							$gen = $row['GenderFLG'];
-							$pred = $row['Prediction'];
-							$res = "";
+                        while($row = $result->fetch_assoc()){
+                            $id  = $row['PatientID'];
+                            $diag = $row['Outcome'];
+                            $sex = $row['Sex'];
+                            $age = $row['Age'];
+                            $chest = $row['ChestPainType'];
+                            $bp = $row['BloodPressure'];
+                            $chol = $row['Cholesterol'];
+                            $sugar = $row['BloodSugar'];
+                            $EC = $row['EC_Results'];
+                            $maxhr = $row['MaxHeartRate'];
+                            $majorv = $row['MajorVessels'];
+                            $dres = "";$sres = "";
 
-							if($pred) {
-								$res = "Yes";
-							}
-							else {
-								$res = "No";
-							}
+                            if($diag) {
+                                $dres = "Yes";
+                            }
+                            else {
+                                $dres = "No";
+                            }
 
-							echo '<tr>
-							<td row="scope">'.$id.'</td>
-							<td>'.$sys.'</td>
-							<td>'.$ldl.'</td>
-							<td>'.$a1c.'</td>
-							<td>'.$gen.'</td>
-							<td>'.$res.'</td>
-							</tr>';
-				        }
+                            if($sex) {
+                                $sures = "M";
+                            }
+                            else {
+                                $sures = "F";
+                            }
 
-                      	?>
+                            if($sugar) {
+                                $fres = "Yes";
+                            }
+                            else {
+                                $fres = "No";
+                            }
+
+                            echo '<tr>
+                            <td row="scope">'.$id.'</td>
+                            <td>'.$age.'</td>
+                            <td>'.$sres.'</td>
+                            <td>'.$chest.'</td>
+                            <td>'.$bp.'</td>
+                            <td>'.$chol.'</td>
+                            <td>'.$fres.'</td>
+                            <td>'.$EC.'</td>
+                            <td>'.$maxhr.'</td>
+                            <td>'.$majorv.'</td>
+                            <td>'.$dres.'</td>
+                            </tr>';
+                        }
+
+                        ?>
                       </tbody>
                     </table>
 

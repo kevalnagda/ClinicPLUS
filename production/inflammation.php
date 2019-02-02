@@ -1,20 +1,19 @@
 <?php 
+
 $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "clinicplus";
+$flag = 0;
 $conn = new mysqli($servername, $username, $password, $database);
+
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-if(isset($_POST["SBP"])) {
-$SBP=$_POST["SBP"];  
-$LDL=$_POST["LDL"];
-$AL=$_POST["AL"];
-$gender=$_POST["gender"];
-$sql="SELECT PatientID FROM diabetes ORDER BY PatientID DESC LIMIT 1";
+if(isset($_POST['temp'])) {
+$sql="SELECT PatientID FROM acute_inflammation ORDER BY PatientID DESC LIMIT 1";
 if($res=$conn->query($sql)) {
     $resarr=$res->fetch_assoc();
     $id=$resarr["PatientID"]+1;
@@ -22,18 +21,37 @@ if($res=$conn->query($sql)) {
 else {
     $id=1;
 }
-$sql="insert into diabetes values(1,$id,$SBP,'$LDL','$AL','$gender','0')";
 
-$conn->query($sql);
+    $temp=$_POST["temp"];  
+    $naus=$_POST["naus"];
+    $lumbp=$_POST["lumbp"];
+    $urine=$_POST["urine"];
+    $mictp=$_POST["mictp"];
+    $urethb=$_POST["urethb"];
+    $inflam=$_POST["inflam"];
+
 $url = 'http://localhost:5000/';
 $ch = curl_init($url);
-curl_setopt($ch, CURLOPT_POSTFIELDS, "");
+ 
+// $myObj->PatientEncounterID = 1;
+// $myObj->PatientID = 30;
+// $myObj->SystolicBPNBR = $SBP;
+// $myObj->LDLNBR = $LDL;
+// $myObj->A1CNBR = $AL;
+// $myObj->GenderFLG = $gender;
+
+// $myJSON = json_encode($myObj);
+
+curl_setopt($ch, CURLOPT_POSTFIELDS, '');
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $result = curl_exec($ch);
 curl_close($ch);
-}
 
+$sql="insert into acute_inflammation values($id,$temp,$naus,$lumbp,$urine,$mictp,$urethb,$inflam,0)";
+
+$conn->query($sql);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -322,56 +340,73 @@ curl_close($ch);
                       <thead>
                         <tr>
                           <th>Patient ID</th>
-                          <th>Systolic Blood Pressure</th>
-                          <th>LDL level</th>
-                          <th>A1c level</th>
-                          <th>Gender</th>
-                          <th>Prediction</th>
+                          <th>Temperature</th>
+                          <th>Nausea</th>
+                          <th>Lumbar Pain</th>
+                          <th>Urine Pushing</th>
+                          <th>Micturition Pain</th>
+                          <th>Urethral Burning</th>
+                          <th>Inflammation</th>
+                          <th>Nephritis</th>
                         </tr>
                       </thead>
                       <tbody>
-                      	<?php 
-                  		$servername = "localhost";
-						$username = "root";
-						$password = "";
-						$database = "clinicplus";
-						$conn = new mysqli($servername, $username, $password, $database);
+                        <?php 
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "";
+                        $database = "clinicplus";
+                        $conn = new mysqli($servername, $username, $password, $database);
 
-						if ($conn->connect_error) {
-						    die("Connection failed: " . $conn->connect_error);
-						} 
+                        if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
+                        } 
 
-						$sql="SELECT * FROM diabetes";
+                        $sql="SELECT * FROM acute_inflammation";
 
-						$result = $conn->query($sql);
+                        $result = $conn->query($sql);
 
-						while($row = $result->fetch_assoc()){
-							$id  = $row['PatientID'];
-							$sys = $row['SystolicBPNBR'];
-							$ldl = $row['LDLNBR'];
-							$a1c = $row['A1CNBR'];
-							$gen = $row['GenderFLG'];
-							$pred = $row['Prediction'];
-							$res = "";
+                        while($row = $result->fetch_assoc()){
+                            $id  = $row['PatientID'];
+                            $temp = $row['Temperature'];
+                            $naus = $row['Nausea'];
+                            $lumbp = $row['LumbarPain'];
+                            $urine = $row['UrinePushing'];
+                            $mictp = $row['MicturitionPain'];
+                            $urethb = $row['UrethralBurning'];
+                            $inflam = $row['Inflamation'];
+                            $neph = $row['Nephritis'];
+                            $nephres = "";
+                            $nres = "";
 
-							if($pred) {
-								$res = "Yes";
-							}
-							else {
-								$res = "No";
-							}
+                            if($naus) {
+                                $nres = "Yes";
+                            }
+                            else {
+                                $nres = "No";
+                            }
 
-							echo '<tr>
-							<td row="scope">'.$id.'</td>
-							<td>'.$sys.'</td>
-							<td>'.$ldl.'</td>
-							<td>'.$a1c.'</td>
-							<td>'.$gen.'</td>
-							<td>'.$res.'</td>
-							</tr>';
-				        }
+                            if($neph) {
+                                $nephres = "Yes";
+                            }
+                            else {
+                                $nephres = "No";
+                            }
 
-                      	?>
+                            echo '<tr>
+                            <td row="scope">'.$id.'</td>
+                            <td>'.$temp.'</td>
+                            <td>'.$nres.'</td>
+                            <td>'.$lumbp.'</td>
+                            <td>'.$urine.'</td>
+                            <td>'.$mictp.'</td>
+                            <td>'.$urethb.'</td>
+                            <td>'.$inflam.'</td>
+                            <td>'.$nephres.'</td>
+                            </tr>';
+                        }
+
+                        ?>
                       </tbody>
                     </table>
 

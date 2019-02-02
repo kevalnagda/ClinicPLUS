@@ -87,7 +87,7 @@ $conn->query($sql);
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <h2>Viral</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -101,12 +101,12 @@ $conn->query($sql);
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="index.html">Dashboard</a></li>
-                      <li><a href="index2.html">Dashboard2</a></li>
-                      <li><a href="index3.html">Dashboard3</a></li>
+                      <li><a href="index.php">Patient Registration</a></li>
+                      <li><a href="test.php">Add Test</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+
+                  <!-- <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="form.html">General Form</a></li>
                       <li><a href="form_advanced.html">Advanced Components</a></li>
@@ -115,8 +115,8 @@ $conn->query($sql);
                       <li><a href="form_upload.html">Form Upload</a></li>
                       <li><a href="form_buttons.html">Form Buttons</a></li>
                     </ul>
-                  </li>
-                  <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
+                  </li> -->
+                  <!-- <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="general_elements.html">General Elements</a></li>
                       <li><a href="media_gallery.html">Media Gallery</a></li>
@@ -128,70 +128,25 @@ $conn->query($sql);
                       <li><a href="inbox.html">Inbox</a></li>
                       <li><a href="calendar.html">Calendar</a></li>
                     </ul>
-                  </li>
-                  <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                  </li> -->
+                  <li><a><i class="fa fa-table"></i> Test Details <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="tables.html">Tables</a></li>
-                      <li><a href="tables_dynamic.html">Table Dynamic</a></li>
+                      <li><a href="index.php">Diabetes</a></li>
+                      <li><a href="breastcancer.php">Breast Cancer</a></li>
+                      <li><a href="fertility.php">Fertility</a></li>
+                      <li><a href="cervic.php">Cervical Cancer</a></li>
+                      <li><a href="heart.php">Heart Disease</a></li>
+                      <li><a href="thoracic.php">Thoracic Cancer</a></li>
+                      <li><a href="inflammation.php">Inflammation</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-bar-chart-o"></i> Statistics <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="chartjs.html">Chart JS</a></li>
-                      <li><a href="chartjs2.html">Chart JS2</a></li>
-                      <li><a href="morisjs.html">Moris JS</a></li>
-                      <li><a href="echarts.html">ECharts</a></li>
-                      <li><a href="other_charts.html">Other Charts</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                      <li><a href="fixed_footer.html">Fixed Footer</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-              <div class="menu_section">
-                <h3>Live On</h3>
-                <ul class="nav side-menu">
-                  <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="e_commerce.html">E-commerce</a></li>
-                      <li><a href="projects.html">Projects</a></li>
-                      <li><a href="project_detail.html">Project Detail</a></li>
-                      <li><a href="contacts.html">Contacts</a></li>
-                      <li><a href="profile.html">Profile</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="page_403.html">403 Error</a></li>
-                      <li><a href="page_404.html">404 Error</a></li>
-                      <li><a href="page_500.html">500 Error</a></li>
-                      <li><a href="plain_page.html">Plain Page</a></li>
-                      <li><a href="login.html">Login Page</a></li>
-                      <li><a href="pricing_tables.html">Pricing Tables</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                        <li><a href="#level1_1">Level One</a>
-                        <li><a>Level One<span class="fa fa-chevron-down"></span></a>
-                          <ul class="nav child_menu">
-                            <li class="sub_menu"><a href="level2.html">Level Two</a>
-                            </li>
-                            <li><a href="#level2_1">Level Two</a>
-                            </li>
-                            <li><a href="#level2_2">Level Two</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li><a href="#level1_2">Level One</a>
-                        </li>
+                      <li><a href="pricing-info.php">Dashboard Pricing</a></li>
+                      <li><a href="diabetes-info.php">Dashboard Diabetes</a></li>
+                      <li><a href="custom-info.php">Custom Dashboard</a></li>
                     </ul>
                   </li>                  
-                  <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
                 </ul>
               </div>
 
@@ -228,7 +183,7 @@ $conn->query($sql);
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">John Doe
+                    <img src="images/img.jpg" alt="">Viral
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -372,13 +327,13 @@ $conn->query($sql);
                           <div class="col-md-9">
                             <select id="heard" name="test_type" class="form-control" required>
                               <option value="">Choose..</option>
-                              <option value="B">Breast Cancer</option>
-                              <option value="D">Diabetes</option>
-                              <option value="F">Fertility</option>
-                              <option value="C">Cervical Cancer</option>
-                              <option value="A">Acculate Inflamation</option>
-                              <option value="T">Thoraric Surgery</option>
-                              <option value="H">Heart Disease</option>
+                              <option value="0">Breast Cancer</option>
+                              <option value="1">Diabetes</option>
+                              <option value="2">Fertility</option>
+                              <option value="3">Cervical Cancer</option>
+                              <option value="4">Acculate Inflamation</option>
+                              <option value="5">Thoraric Surgery</option>
+                              <option value="6">Heart Disease</option>
                             </select>
                           </div>
                         </div>  
@@ -439,24 +394,24 @@ $conn->query($sql);
 
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left input_mask">
+                    <form class="form-horizontal form-label-left input_mask" action="breastcancer.php" method="POST">
                       <div class="row">
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Radius mean</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="radius_m" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Texture mean</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="texture_m" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Perimeter mean</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="peri_m" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                       </div>
@@ -465,19 +420,19 @@ $conn->query($sql);
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Area mean</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="area_m" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Smoothness mean</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="smooth_m" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Compactness mean</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="compac_m" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                       </div>
@@ -486,19 +441,19 @@ $conn->query($sql);
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Concavity mean</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="concav_m" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Concavepoints mean</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text"name="concavp_m" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Symmetry mean</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="symm_m" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                       </div>
@@ -507,19 +462,19 @@ $conn->query($sql);
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Fractal dimension mean</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="fract_m" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Radius SE</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="radius_se" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Texture SE</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="texture_se" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                       </div>
@@ -528,19 +483,19 @@ $conn->query($sql);
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Perimeter SE</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="peri_se" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Area SE</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="area_se" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Smoothness SE</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="smooth_se" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                       </div>
@@ -549,19 +504,19 @@ $conn->query($sql);
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Compactness SE</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="compac_se" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Concavity SE</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="concav_se" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Concavepoints SE</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="concavp_se" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                       </div>
@@ -570,19 +525,19 @@ $conn->query($sql);
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Symmetry SE</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="symm_se" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Fractal dimension SE</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="fract_se" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Radius width</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="radius_w" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                       </div>
@@ -591,19 +546,19 @@ $conn->query($sql);
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Texture width</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="texture_w" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Perimeter width</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="peri_w" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Area width</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="area_w" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                       </div>
@@ -612,19 +567,19 @@ $conn->query($sql);
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Smoothness width</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="smooth_w" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Compactness width</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="compac_w" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Concavity width</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="concav_w" class="form-control" placeholder="Default Input">
                           </div>
                         </div>                        
                       </div>
@@ -633,37 +588,37 @@ $conn->query($sql);
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Concavepoints width</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="concavp_w" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Symmetry width</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="symm_w" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Fractal dimension width</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="fract_w" class="form-control" placeholder="Default Input">
                           </div>
                         </div>                        
                       </div>
-
+                    <!-- 
                       <div class="row">
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Tumor size</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="tumor" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Lymph node status</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="lymph" class="form-control" placeholder="Default Input">
                           </div>
                         </div>                        
-                      </div>
+                      </div> -->
                       
                       <div class="form-group">
                         <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-5">
@@ -772,24 +727,24 @@ $conn->query($sql);
 
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left input_mask">
+                    <form class="form-horizontal form-label-left input_mask" action="fertility.php" method="POST">
                       <div class="row">
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Season</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="season" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Age</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="age" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Childhood disease</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="child" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                       </div>  
@@ -798,19 +753,19 @@ $conn->query($sql);
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Trauma</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="trauma" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Surgical intervention</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="sugrical" class="form-control" placeholder="Default Input">
                           </div>
                         </div> 
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">High fever</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="fever" class="form-control" placeholder="Default Input">
                           </div>
                         </div>                      
                       </div>  
@@ -819,19 +774,19 @@ $conn->query($sql);
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Alcohol consumption</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="alcohol" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Smoking habit</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="smoking" class="form-control" placeholder="Default Input">
                           </div>
                         </div> 
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Sitting hours</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="sitting" class="form-control" placeholder="Default Input">
                           </div>
                         </div>                      
                       </div>  
@@ -874,7 +829,7 @@ $conn->query($sql);
 
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left input_mask">
+                    <form class="form-horizontal form-label-left input_mask" action="cervic.php" method="POST">
                       <div class="row">
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Age</label>
@@ -1159,24 +1114,24 @@ $conn->query($sql);
 
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left input_mask">
+                    <form class="form-horizontal form-label-left input_mask" action="inflammation.php"method="POST">
                       <div class="row">
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Temperature</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="temp" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Nausea</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="naus" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Lumbar pain</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="lumbp" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                       </div>  
@@ -1185,19 +1140,19 @@ $conn->query($sql);
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Urine pushing</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="urine" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Micturition pain</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="mictp" class="form-control" placeholder="Default Input">
                           </div>
                         </div> 
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Urethral burning</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="urethb" class="form-control" placeholder="Default Input">
                           </div>
                         </div>                      
                       </div>  
@@ -1206,7 +1161,7 @@ $conn->query($sql);
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Inflammation</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="inflam" class="form-control" placeholder="Default Input">
                           </div>
                         </div>                                                                   
                       </div>  
@@ -1249,7 +1204,7 @@ $conn->query($sql);
 
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left input_mask">
+                    <form class="form-horizontal form-label-left input_mask" action="thoracic.php" method="POST">
                       <div class="row">
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Diagnosis</label>
@@ -1402,102 +1357,96 @@ $conn->query($sql);
 
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left input_mask">
+                    <form class="form-horizontal form-label-left input_mask" action="heart.php" method="POST">
                       <div class="row">
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Age</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="age" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Sex</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="sex" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Chest</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="chest" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                       </div>  
 
-                      <div class="row">
-                        <div class="form-group col-md-4">
-                          <label class="control-label col-md-4 col-sm-4 col-xs-4">Chest pain type</label>
-                          <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
-                          </div>
-                        </div>
+                      <div class="row">                      
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Blood pressure</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="bp" class="form-control" placeholder="Default Input">
                           </div>
                         </div> 
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Cholesterol</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="chol" class="form-control" placeholder="Default Input">
                           </div>
-                        </div>                      
-                      </div>  
-
-                      <div class="row">
+                        </div>    
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Blood sugar</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="sugar" class="form-control" placeholder="Default Input">
                           </div>
-                        </div>   
+                        </div>                   
+                      </div>  
+
+                      <div class="row"> 
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">EC results</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="EC" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Max heartrate</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="maxhr" class="form-control" placeholder="Default Input">
+                          </div>
+                        </div> 
+                        <div class="form-group col-md-4">
+                          <label class="control-label col-md-4 col-sm-4 col-xs-4">Angina</label>
+                          <div class="col-md-8 col-sm-8 col-xs-8">
+                            <input type="text" name="angina" class="form-control" placeholder="Default Input">
                           </div>
                         </div>                                                                
                       </div>  
 
-                      <div class="row">
-                        <div class="form-group col-md-4">
-                          <label class="control-label col-md-4 col-sm-4 col-xs-4">Angina</label>
-                          <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
-                          </div>
-                        </div>   
+                      <div class="row">                          
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Old peak</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="opeak" class="form-control" placeholder="Default Input">
                           </div>
                         </div>
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Peak slope</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="peaks" class="form-control" placeholder="Default Input">
                           </div>
-                        </div>                                                                
-                      </div>  
-
-                      <div class="row">
+                        </div> 
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Major vessels</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="majorv" class="form-control" placeholder="Default Input">
                           </div>
-                        </div>   
+                        </div>                                                                  
+                      </div>  
+
+                      <div class="row">                        
                         <div class="form-group col-md-4">
                           <label class="control-label col-md-4 col-sm-4 col-xs-4">Thal</label>
                           <div class="col-md-8 col-sm-8 col-xs-8">
-                            <input type="text" class="form-control" placeholder="Default Input">
+                            <input type="text" name="thal" class="form-control" placeholder="Default Input">
                           </div>
                         </div>                                                                                     
                       </div>  
