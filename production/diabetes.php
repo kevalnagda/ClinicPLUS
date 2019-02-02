@@ -30,6 +30,7 @@ $ch = curl_init($url);
 //     'A1CNBR' => $AL,
 //     'GenderFLG' => $gender
 // );
+ 
 
 
 $myObj->PatientEncounterID = 1;
@@ -38,13 +39,17 @@ $myObj->SystolicBPNBR = $SBP;
 $myObj->LDLNBR = $LDL;
 $myObj->A1CNBR = $AL;
 $myObj->GenderFLG = $gender;
+
+echo $myObj->A1CNBR;
+
 $myJSON = json_encode($myObj);
 
+echo $myJSON;
 // $myJSON = json_encode($myObj);
 
 
 
-echo "HELLLOOO".$SBP;
+echo "HELLLOOO".$gender;
 // $payload = json_encode(array($data));
 curl_setopt($ch, CURLOPT_POSTFIELDS, $myJSON);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
@@ -53,8 +58,8 @@ $result = curl_exec($ch);
 curl_close($ch);
 echo $result;
 
-// $sql="insert into diabetes values($contact,'$name',$alergies,'$email','$gender','$blood_type','$address')";
+$sql="insert into diabetes values(1,1,$SBP,'$LDL','$AL','$gender','0')";
 
-// $conn->query($sql);
+$conn->query($sql);
 
 ?>
