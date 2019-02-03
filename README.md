@@ -46,3 +46,13 @@ Some reports being sensitive in nature need to be handed out immediately
 ### • [Metabase](https://metabase.com/)
 
 The models are trained over the UCI dataset and we use Gentella as our base Bootstrap template
+
+
+<p align="center">
+  <img src="Screenshot (2).png"/>
+  <img src="Screenshot (4).png"/>
+  <img src="Screenshot (5).png"/>
+  <img src="Screenshot (7).png"/>
+  <img src="Screenshot (8).png"/>
+  <img src="Screenshot (6).png"/>
+</p>
