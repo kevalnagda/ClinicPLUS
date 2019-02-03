@@ -226,6 +226,7 @@
                                                 <a>Diabetes Results</a>
                                             </h2>
                               <div class="byline">
+                                <span>01.02.2019</span><a></a>
                                 <?php
                                   $servername = "localhost";
                                   $username = "root";
@@ -265,6 +266,7 @@
                                                 <a>Fertility Results</a>
                                             </h2>
                               <div class="byline">
+                                <span>01.02.2019</span><a></a>
                                 <?php
                                   $sql="SELECT * FROM fertility WHERE PatientID = 1";
                                   if($res=$conn->query($sql)) {

@@ -1,0 +1,77 @@
+package:
+  name: healthcareai
+  version: "0.1.8"
+
+source:
+  fn: healthcareai-0.1.8.tar.gz
+  url: https://pypi.python.org/packages/3f/f7/6c008469634ced5fe72730c6603cecfb1d6c2633428e27ae9b6344e307fb/healthcareai-0.1.8.tar.gz
+  md5: 9b7fdf2cbbf117e2eaf14043a4bf533b
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+# build:
+  # noarch_python: True
+  # preserve_egg_dir: True
+  # entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - healthcareai = healthcareai:main
+    #
+    # Would create an entry point called healthcareai that calls healthcareai.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - matplotlib >=1.5.3
+    - numpy >=1.11.2
+    - pandas >=0.20.0
+    - pyodbc >=3.0.10
+    - scipy >=0.18.1
+    - scikit-learn >=0.18
+
+  run:
+    - python
+    - matplotlib >=1.5.3
+    - numpy >=1.11.2
+    - pandas >=0.20.0
+    - pyodbc >=3.0.10
+    - scipy >=0.18.1
+    - scikit-learn >=0.18
+
+test:
+  # Python imports
+  imports:
+    - healthcareai
+    - healthcareai.common
+    - healthcareai.tests
+
+  # commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  requires:
+    - nose
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: http://healthcare.ai
+  license: MIT License
+  summary: 'Tools for healthcare machine learning'
+  license_family: MIT
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

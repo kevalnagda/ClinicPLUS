@@ -54,8 +54,11 @@ else {
     $fract_w=$_POST["fract_w"];
     // $tumor=$_POST["tumor"];
     // $lymph=$_POST["lymph"];
+$sql="insert into diagnostic_breast_cancer values($id,'M',$radius_m,$texture_m,$peri_m,$area_m,$smooth_m,$compac_m,$concav_m,$concavp_m,$symm_m,$fract_m,$radius_se,$texture_se,$peri_se,$area_se,$smooth_se,$compac_se,$concav_se,$concavp_se,$symm_se,$fract_se,$radius_w,$texture_w,$peri_w,$area_w,$smooth_w,$compac_w,$concav_w,$concavp_w,$symm_w,$fract_w)";
 
-$url = 'http://localhost:5000/';
+$conn->query($sql);
+
+$url = 'http://localhost:5004/';
 $ch = curl_init($url);
  
 // $myObj->PatientEncounterID = 1;
@@ -73,9 +76,6 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $result = curl_exec($ch);
 curl_close($ch);
 
-$sql="insert into diagnostic_breast_cancer values($id,'M',$radius_m,$texture_m,$peri_m,$area_m,$smooth_m,$compac_m,$concav_m,$concavp_m,$symm_m,$fract_m,$radius_se,$texture_se,$peri_se,$area_se,$smooth_se,$compac_se,$concav_se,$concavp_se,$symm_se,$fract_se,$radius_w,$texture_w,$peri_w,$area_w,$smooth_w,$compac_w,$concav_w,$concavp_w,$symm_w,$fract_w)";
-
-$conn->query($sql);
 }
 ?>
 <!DOCTYPE html>
@@ -388,7 +388,7 @@ $conn->query($sql);
 
                         while($row = $result->fetch_assoc()){
                             $id  = $row['ID'];
-                            $diag = $row['Diagnosis'];
+                            $diag = $row['Prediction'];
                             $rad = $row['Radius_M'];
                             $text = $row['Texture_M'];
                             $peri = $row['Perimeter_M'];

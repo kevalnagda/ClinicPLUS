@@ -62,8 +62,8 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-table"></i> Test Details <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="patient1_history.php">Results</a></li>
-                      <li><a href="patient1.php">Dashboard</a></li>
+                      <li><a href="patient2_history.php">Results</a></li>
+                      <li><a href="patient2.php">Dashboard</a></li>
                     </ul>
                   </li>
                                
@@ -226,6 +226,7 @@
                                                 <a>Diabetes Results</a>
                                             </h2>
                               <div class="byline">
+                                <span>5.02.2019</span><a></a>
                                 <?php
                                   $servername = "localhost";
                                   $username = "root";
@@ -236,7 +237,7 @@
                                   if ($conn->connect_error) {
                                       die("Connection failed: " . $conn->connect_error);
                                   }
-                                  $sql="SELECT * FROM diabetes WHERE PatientID = 1";
+                                  $sql="SELECT * FROM diabetes WHERE PatientID = 2";
                                   if($res=$conn->query($sql)) {
                                       $resarr=$res->fetch_assoc();
                                       $SystolicBPNBR=$resarr["SystolicBPNBR"];
@@ -265,8 +266,9 @@
                                                 <a>Fertility Results</a>
                                             </h2>
                               <div class="byline">
+                                <span>5.02.2019</span><a></a>
                                 <?php
-                                  $sql="SELECT * FROM fertility WHERE PatientID = 1";
+                                  $sql="SELECT * FROM fertility WHERE PatientID = 2";
                                   if($res=$conn->query($sql)) {
                                       $resarr=$res->fetch_assoc();
                                       $AlcoholConsumption=$resarr["AlcoholConsumption"];
@@ -298,12 +300,7 @@
         <!-- /page content -->
 
         <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
-          </div>
-          <div class="clearfix"></div>
-        </footer>
+        
         <!-- /footer content -->
       </div>
     </div>

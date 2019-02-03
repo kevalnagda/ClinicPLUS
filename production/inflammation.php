@@ -29,8 +29,10 @@ else {
     $mictp=$_POST["mictp"];
     $urethb=$_POST["urethb"];
     $inflam=$_POST["inflam"];
+$sql="insert into acute_inflammation values($id,$temp,$naus,$lumbp,$urine,$mictp,$urethb,$inflam,0)";
 
-$url = 'http://localhost:5000/';
+$conn->query($sql);
+$url = 'http://localhost:5003/';
 $ch = curl_init($url);
  
 // $myObj->PatientEncounterID = 1;
@@ -48,9 +50,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $result = curl_exec($ch);
 curl_close($ch);
 
-$sql="insert into acute_inflammation values($id,$temp,$naus,$lumbp,$urine,$mictp,$urethb,$inflam,0)";
 
-$conn->query($sql);
 }
 ?>
 <!DOCTYPE html>
@@ -374,8 +374,8 @@ $conn->query($sql);
                             $urine = $row['UrinePushing'];
                             $mictp = $row['MicturitionPain'];
                             $urethb = $row['UrethralBurning'];
-                            $inflam = $row['Inflamation'];
-                            $neph = $row['Nephritis'];
+                            $inflam = $row['Inflammation'];
+                            $neph = $row['Prediction'];
                             $nephres = "";
                             $nres = "";
 

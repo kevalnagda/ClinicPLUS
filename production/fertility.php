@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-if(isset($_POST["radius_m"])) {
+if(isset($_POST["season"])) {
 $sql="SELECT PatientID FROM fertility ORDER BY PatientID DESC LIMIT 1";
 if($res=$conn->query($sql)) {
     $resarr=$res->fetch_assoc();
@@ -31,8 +31,11 @@ else {
     $alcohol=$_POST["alcohol"];
     $smoking=$_POST["smoking"];
     $sitting=$_POST["sitting"];
+$sql="insert into fertility values($id,$season,$age,$child,$trauma,$sugrical,$fever,$alcohol,$smoking,$sitting,'N')";
 
-$url = 'http://localhost:5000/';
+$conn->query($sql);
+
+$url = 'http://localhost:5001/';
 $ch = curl_init($url);
  
 // $myObj->PatientEncounterID = 1;
@@ -50,9 +53,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $result = curl_exec($ch);
 curl_close($ch);
 
-$sql="insert into fertility values($id,$season,$age,$child,$trauma,$sugrical,$fever,$alcohol,$smoking,$sitting,'N')";
 
-$conn->query($sql);
 }
 ?>
 <!DOCTYPE html>
@@ -372,7 +373,7 @@ $conn->query($sql);
 
                         while($row = $result->fetch_assoc()){
                             $id  = $row['PatientID'];
-                            $diag = $row['Diagnosis'];
+                            $diag = $row['Prediction'];
                             $season = $row['Season'];
                             $age = $row['Age'];
                             $child = $row['ChildishDiseases'];

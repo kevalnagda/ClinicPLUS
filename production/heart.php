@@ -35,8 +35,10 @@ else {
     $peaks=$_POST["peaks"];
     $majorv=$_POST["majorv"];
     $thal=$_POST["thal"];
+$sql="insert into heart values($id,$age,$sex,$chest,$bp,$chol,$sugar,$EC,$maxhr,$angina,$opeak,$peaks,$majorv,$thal,1)";
 
-$url = 'http://localhost:5000/';
+$conn->query($sql);
+$url = 'http://localhost:5002/';
 $ch = curl_init($url);
  
 // $myObj->PatientEncounterID = 1;
@@ -54,9 +56,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $result = curl_exec($ch);
 curl_close($ch);
 
-$sql="insert into heart values($id,$age,$sex,$chest,$bp,$chol,$sugar,$EC,$maxhr,$angina,$opeak,$peaks,$majorv,$thal,1)";
 
-$conn->query($sql);
 }
 ?>
 <!DOCTYPE html>
@@ -376,7 +376,7 @@ $conn->query($sql);
 
                         while($row = $result->fetch_assoc()){
                             $id  = $row['PatientID'];
-                            $diag = $row['Outcome'];
+                            $diag = $row['Prediction'];
                             $sex = $row['Sex'];
                             $age = $row['Age'];
                             $chest = $row['ChestPainType'];
@@ -388,13 +388,7 @@ $conn->query($sql);
                             $majorv = $row['MajorVessels'];
                             $dres = "";$sres = "";
 
-                            if($diag) {
-                                $dres = "Yes";
-                            }
-                            else {
-                                $dres = "No";
-                            }
-
+                          
                             if($sex) {
                                 $sures = "M";
                             }
@@ -420,7 +414,7 @@ $conn->query($sql);
                             <td>'.$EC.'</td>
                             <td>'.$maxhr.'</td>
                             <td>'.$majorv.'</td>
-                            <td>'.$dres.'</td>
+                            <td>'.$diag.'</td>
                             </tr>';
                         }
 
